@@ -7,7 +7,7 @@ export default function questao(req, res) {
 
 }
 
-export default function get(req, res) {
+export function get(req, res) {
     if(req.method === "GET"){
         const id = req.query.id
         res.status(200).json({
