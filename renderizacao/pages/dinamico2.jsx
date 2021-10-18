@@ -1,7 +1,7 @@
 // Para usar api, funciona parecido com dart/flutter
 
 //gerando apenas do lado do servidor
-export async function getStaticProps(){
+export async function getServerSideProps(){
     console.log('[Server] gerando props para o componente....');
     const resp = await fetch('http://localhost:3000/api/produtos')
     const produtos = await resp.json()
@@ -13,7 +13,7 @@ export async function getStaticProps(){
     }
 }
 //funcao que gera a pagina estatica
-export default function Estatico4(props){
+export default function Dinamico2(props){
 
     console.log('[Cliente] gerando props para o componente....');
     function renderizarProdutos() {
@@ -24,7 +24,7 @@ export default function Estatico4(props){
 
     return (
         <div>
-            <h1>Estático #04</h1>
+            <h1>Dinamico #02</h1>
             <ul>
                 {renderizarProdutos()}
             </ul>
