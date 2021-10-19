@@ -27,12 +27,16 @@ export default class QuestaoModel {
     get acertou(){
         return this.#acertou
     }
+    get naoRespondida() {
+        return !this.respondida
+    }
     get respondida() {
         for(let resposta of this.#respostas){
             if(resposta.revelada) return true
         }
         return false
     }
+
 
 
     responderCom(indice: number): QuestaoModel {
