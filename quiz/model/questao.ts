@@ -6,7 +6,6 @@ export default class QuestaoModel {
     #enunciado: string
     #respostas: RespostaModel[]
     #acertou: boolean
-    // #respondida: boolean
 
     constructor(id: number, enunciado: string, respostas: RespostaModel[], acertou = false){
         this.#id = id
@@ -37,7 +36,13 @@ export default class QuestaoModel {
         return false
     }
 
+    static criarUsandoObjeto(obj: QuestaoModel) : QuestaoModel {
+        const respostas = obj.respostas.map(resp => {
 
+           return RespostaModel.criarUsandoObjeto(resp)
+        })
+        return new QuestaoModel(obj.id, obj.enunciado, respostas, obj.acertou)
+    }
 
     responderCom(indice: number): QuestaoModel {
         const acertou = this.#respostas[indice]?.certa

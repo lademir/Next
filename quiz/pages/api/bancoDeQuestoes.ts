@@ -98,5 +98,11 @@ const questoes: QuestaoModel[] = [
         RespostaModel.errada('Marquês de Pombal'),
         RespostaModel.certa('Duque de Caxias'),
     ]),
+    new QuestaoModel(312, 'Quem é a dona da loja Laluna Modas?', [
+        RespostaModel.errada('Bruno'),
+        RespostaModel.errada('Smalles'),
+        RespostaModel.errada('O careca'),
+        RespostaModel.certa('Luiza'),
+    ]),
 ]
 export default questoes

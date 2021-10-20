@@ -17,6 +17,10 @@ export default class RespostaModel {
         return new RespostaModel(valor, false)
     }
 
+    static criarUsandoObjeto(obj: RespostaModel): RespostaModel {
+        return new RespostaModel(obj.valor, obj.certa, obj.revelada)
+    }
+
     get valor(){
         return this.#valor
     }
@@ -25,6 +29,10 @@ export default class RespostaModel {
     }
     get revelada(){
         return this.#revelada
+    }
+
+    set revelada(aiai:boolean){
+        this.#revelada = aiai
     }
 
     revelar() : RespostaModel {
